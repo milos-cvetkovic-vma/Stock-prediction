@@ -1,0 +1,91 @@
+instal from git-scm.com\downloads
+
+# initial config (just first time using git)
+git config --global user.name "your name"               // Milos Cvetkovic
+git config --global user.email "your email@gmail.com"   // miloscvetkovicvma@gmail.com
+# i set main as defaultBranch (on gitHub is that, and on local is master)
+
+#init new repository in project folder (working dir) => new hidden folder named .git
+git init
+
+#To list all files including hidden (ls -Force) 
+
+#To delete git   (-rf is -recursive force)
+rm -rf .git
+
+#add files to staging area
+git add .  //add all files to staging area
+git add index.html // example to add individually
+
+# To view status of all files 
+git status
+
+#commit files to local repository
+git commit -m 'Initial commit'  // -m is message
+
+#Logging my commits
+git log
+
+#Push to remote repository (gitHub, gitLab, bitBucket)
+# stock-prediction (repo name)
+git push
+
+#Pull changes from remot repository to local machine. Others can make changes.
+git pull
+
+#if we want to download some project from gitHub we can click download and unzip that folder, but better is 
+#with 
+git clone    # when start working on existing project
+
+#creating .gitignore for files like .env
+and in this file we type .env or any file we dont like to be in repo
+
+#Removing already pushed files 
+git rm --cached backend/.env frontend/.env
+git commit -m "Stop tracking .env files"
+git push
+
+#shortcuts
+git commit -am 'Added something'  // add and commit in same line
+git add index.html && git commit -m 'added something' // also in one line specific file + commit
+
+#getting code from gitHub
+1. Download and unzip
+2. git clone - get a copy of full repo to your machine. With SSH (create ssh key) or https
+3. git pull - get the latest change from the repo
+4. git fetch - get latest changes without merging
+5. forking - copy repo in your own account 
+
+# Branching and Merging (work with code and make changes without changking main code...then merge)
+# We can create branch. for diff environments (production, staging, development).
+git checkout -b feature/login   // create and switch to branch. common naming convention feature/___ or bug/___ whatev.bug fixing
+# whatever is done afterwards is in this branch
+git push -u origin feature/login // pushing to that branch
+#owner of repo can pull on github to git request and check and decide if want to merge it. After that we can choose to delete the branch or not
+
+#Merge
+git checkout main //if we want in main
+git pull origin main // now it is up to date
+
+#Merge locally
+git merge feature/login    // merge it into the main
+git branch -d feature/login // deleting branch locally  
+
+#for CI/CD  cont.integration/cont.deployment
+he went to vercel.com (mentioned fileZilla also) and created there ci/cd pipeline  //deployed publicly to that domain
+
+### this is from gitHub when i created new repo 
+
+…or create a new repository on the command line
+echo "# stock-prediction" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/milos-cvetkovic-vma/stock-prediction.git  
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/milos-cvetkovic-vma/stock-prediction.git  // used it in terminal
+git branch -M main   //used this also after git remote...
+git push -u origin main  // -u is upstream. We do this only for the first time, after that is only git push required

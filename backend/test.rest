@@ -1,0 +1,33 @@
+//GET http://localhost:4000
+
+//POST http://localhost:4000
+
+//GET http://localhost:4000/api/predictions
+
+//GET http://localhost:4000/api/predictions/681621dea1315cd2fe7e398e
+
+//POST http://localhost:4000/api/predictions
+#POST http://localhost:4000/api/user/login
+#POST http://localhost:4000/api/user/signup
+Content-Type: application/json
+
+{ 
+    "email": "baba@gmail.com",
+    "password": "Baba123!"
+}
+
+//{
+//    "stock": "Sp500",
+//    "price_Prediction": "Up",
+//   "comment": "Reko Mrioslav !"
+//}
+
+
+
+
+//DELETE http://localhost:4000/api/predictions/681621dea1315cd2fe7e398e
+
+//DELETE http://localhost:4000/api/predictions/
+
+//PATCH  http://localhost:4000/api/predictions/681621dea1315cd2fe7e398e
+//Content-Type: application/json
