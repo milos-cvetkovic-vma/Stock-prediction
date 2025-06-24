@@ -9,6 +9,10 @@ npm install - for dependencies.
 
 ## Repository Files
 
+### package.json
+
+The **package.json** file in this project manages the project's dependencies, scripts, and configuration.
+
 ### Fronted
 
 **Frontend** is built using React, with routes set up for different pages such as the homepage, login, and signup pages. Various React hooks, including useState, useEffect, and custom hooks, are used for state management and side effects. Data validation is handled on the frontend using the Zod library, ensuring that user inputs are properly validated on submission. The CSS styling is managed in index.css.
